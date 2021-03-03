@@ -1,0 +1,31 @@
+{
+  "name": "@zentask/mock",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/uuid": "^8.3.0",
+    "@zentask/core": "*",
+    "uuid": "^8.3.2"
+  },
+  "private": true,
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json"
+      }
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "moduleNameMapper": {}
+  }
+}

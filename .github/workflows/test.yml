@@ -1,0 +1,29 @@
+on:
+  push:
+
+name: Test
+
+env:
+  DOCKER_BUILDKIT: 1
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      parallelism: ${{ strategy.job-total }}
+      index: ${{ strategy.job-index }}
+    name: Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: yarn install
+      - name: Test
+        env:
+          REF: ${{ github.ref }}
+        run: |
+          yarn run test

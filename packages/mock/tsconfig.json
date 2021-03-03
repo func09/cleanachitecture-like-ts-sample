@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["./src/**/*.ts", "__tests__/**/*"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@zentask/core": ["../core/src"],
+      "@zentask/core/*": ["../core/src/*"],
+    }
+  }
+}
